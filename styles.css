@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9fdc7;
+}
+
+.cards {
+    width: 740px;
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.cards.hidden {
+    display: none;
+}
+
+.leaderboard {
+    display: none;
+}
+
+.leaderboard.visible {
+    display: block;
+}
+
+.games {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.games td,
+.games th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.games th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #d57cb8;
+    color: white;
+}
+
+.card {
+    position: relative;
+    cursor: pointer;
+    perspective: 700px;
+    width: 100px;
+    height: 100px;
+}
+
+.card.flipped,
+.card.matched {
+    pointer-events: none;
+}
+
+.card.flipped .back,
+.card.matched .back {
+    transform: rotateY(180deg);
+}
+
+.card.flipped .front,
+.card.matched .front {
+    transform: rotateY(360deg);
+}
+
+.back,
+.front {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition: transform 400ms;
+}
+
+.back {
+    background: #d57cb8 url(images/placeholder.svg) center center no-repeat;
+    z-index: 1;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.bear {
+    background: #d57cb8 url(images/bear.svg) center center no-repeat;
+}
+
+.cat {
+    background: #d57cb8 url(images/cat.svg) center center no-repeat;
+}
+
+.dog {
+    background: #d57cb8 url(images/dog.svg) center center no-repeat;
+}
+
+.fox {
+    background: #d57cb8 url(images/fox.svg) center center no-repeat;
+}
+
+.lion {
+    background: #d57cb8 url(images/lion.svg) center center no-repeat;
+}
+
+.monkey {
+    background: #d57cb8 url(images/monkey.svg) center center no-repeat;
+}
+
+.owl {
+    background: #d57cb8 url(images/owl.svg) center center no-repeat;
+}
+
+.panda {
+    background: #d57cb8 url(images/panda.svg) center center no-repeat;
+}
+
+.pig {
+    background: #d57cb8 url(images/pig.svg) center center no-repeat;
+}
+
+.rabbit {
+    background: #d57cb8 url(images/rabbit.svg) center center no-repeat;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-end {
+    display: flex;
+}
+
+.copyright {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.github-link {
+    text-decoration: none;
+    display: flex;
+    margin-right: 24px;
+    font-size: 0;
+}
+
+.rsschool-link {
+    text-decoration: none;
+    font-size: 0;
+}
